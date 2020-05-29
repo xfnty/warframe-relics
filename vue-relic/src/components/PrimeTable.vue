@@ -77,4 +77,16 @@ span {
     opacity: 0.4;
   }
 }
+
+/*～620px*/
+@media all and (max-width: 620px)
+{
+  .table {
+    width: 92vw;
+
+    &__data--parts-name {
+      width: 20vw;
+    }
+  }
+}
 </style>
