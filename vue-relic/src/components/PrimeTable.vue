@@ -1,13 +1,15 @@
 <template>
-  <table v-show='item.show' :id='item.name'>
+  <table class="table" v-show='item.show' :id='item.name'>
     <tr>
-      <th colspan='2'>{{ item.name }} Prime</th>
+      <th class="table__header" colspan='2'>{{ item.name }} Prime</th>
     </tr>
     <tr v-for="(part, index) in item.parts" :key="index">
-      <td class='primeParts'>{{ part.name }}</td>
-      <td>
-        <span v-for="(relic, index) in part.relics" :key="index"
-          :class='[relic.rarity, relic.vaulted ? "vaulted" : ""]'>{{ relic.name }}</span>
+      <td class="table__data--parts-name">{{ part.name }}</td>
+      <td class="table__data">
+        <span
+          v-for="(relic, index) in part.relics" :key="index"
+          :class='[relic.rarity, relic.vaulted ? "vaulted" : ""]'
+        >{{ relic.name }}</span>
       </td>
     </tr>
   </table>
@@ -23,29 +25,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
-table {
+.table {
   border-collapse: collapse;
   color: white;
   font-size: 0.8em;
   width: 44em;
   margin-top: 1em;
-}
 
-th,
-td {
-  border: 1px solid gray;
-}
+  &__header {
+    border: 1px solid gray;
+    font-size: 1.2em;
+    line-height: 3em;
+  }
 
-th {
-  font-size: 1.2em;
-  line-height: 3em;
-}
+  %__data {
+    border: 1px solid gray;
+    padding: 0.3em;
+  }
 
-td {
-  padding: 0.3em;
+  &__data {
+    @extend %__data;
 
-  &.primeParts {
-    width: 12em;
+    &--parts-name {
+      @extend %__data;
+      width: 12em;
+    }
   }
 }
 
