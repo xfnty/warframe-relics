@@ -10,7 +10,7 @@ on:
     
 jobs:
   job_1:
-    name: make json then upload
+    name: deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd vue-relic
-        npm ci
+        npm install
 
     - name: Build
       run: npm run build
