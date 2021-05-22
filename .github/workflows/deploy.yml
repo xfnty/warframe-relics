@@ -25,10 +25,12 @@ jobs:
     - name: Install dependencies
       run: |
         cd vue-relic
-        npm install
+        npm ci
 
     - name: Build
-      run: npm run build
+      run: |
+        cd vue-relic
+        npm run build
 
     - name: Commit file
       run: |
