@@ -18,19 +18,19 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Use Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: '12.x'
+        node-version: '16'
 
     - name: Install dependencies
       run: |
-        cd vue-relic
-        npm ci
+        cd relic
+        yarn install
 
     - name: Build
       run: |
-        cd vue-relic
-        npm run build
+        cd relic
+        yarn build
 
     - name: Commit file
       run: |

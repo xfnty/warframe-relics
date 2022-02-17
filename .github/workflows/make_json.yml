@@ -11,7 +11,7 @@ env:
   JSON_OUTPUT_DIR: 'output'
   ARTIFACT_DIR: 'artifact'
   JSON_FILE_NAME: 'prime.json'
-  JSON_FILE_PATH: './vue-relic/src/assets/prime.json'
+  JSON_FILE_PATH: './relic/assets/prime.json'
     
 jobs:
   job_1:
