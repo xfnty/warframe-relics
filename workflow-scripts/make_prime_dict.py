@@ -3,19 +3,12 @@
 
 def make_prime_data(json_dict):
     prime_data = {}
-
-    prime_data["search"] = ""
     prime_data["updateDate"] = json_dict["date"]
-    prime_data["button"] = {
-        "value": "Show buttons",
-		"show": False
-    }
-
     prime_data["tables"] = []
+    
     for name in json_dict["names"]:
         prime = {}
         prime["name"] = name.replace(" Prime", "")
-        prime["show"] = False
         prime["parts"] = []
 
         parts_list = json_dict[name]
@@ -30,9 +23,9 @@ def make_prime_data(json_dict):
                 relics["name"] = relic[0]
                 relics["rarity"] = relic[1]
                 if relic[0] in json_dict["relics"]:
-                    relics["vaulted"] = False
+                    relics["isInVault"] = False
                 else:
-                    relics["vaulted"] = True
+                    relics["isInVault"] = True
                 parts["relics"].append(relics)
             prime["parts"].append(parts)
         prime_data["tables"].append(prime)
