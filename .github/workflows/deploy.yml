@@ -30,6 +30,7 @@ jobs:
     - name: Build
       run: |
         cd relic
+        yarn typesync
         yarn build
 
     - name: Commit file
