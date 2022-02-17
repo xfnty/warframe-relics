@@ -8,7 +8,7 @@ type Props = {
 
 const Relic: VFC<Props> = ({ relic }): JSX.Element =>
   useMemo(() => {
-    console.log(`[${relic.name}] relic render`);
+    // console.log(`[${relic.name}] relic render`);
     return (
       <span
         className={`relic ${relic.rarity} ${relic.isInVault ? 'isInVault' : ''}`}

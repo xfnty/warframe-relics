@@ -18,7 +18,7 @@ const PrimeTable: VFC<Props> = ({ item, onOff }): JSX.Element =>
     });
     const primeParts = tmp;
 
-    console.log(`[${item.name}] table render`);
+    // console.log(`[${item.name}] table render`);
     return (
       <table className={`table ${onOff ? 'table__selected' : ''}`}>
         <thead>

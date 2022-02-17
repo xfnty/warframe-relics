@@ -8,7 +8,7 @@ type Props = {
 
 const ToggleButton: VFC<Props> = ({ name, onOff, setOnOff }): JSX.Element =>
   useMemo(() => {
-    console.log(`[${name}] button render`);
+    // console.log(`[${name}] button render`);
     return (
       <button
         className={`main__input--button-prime ${

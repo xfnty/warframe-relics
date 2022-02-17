@@ -15,7 +15,7 @@ const PrimePart: VFC<Props> = ({ part }): JSX.Element =>
     });
     const relics = tmp;
 
-    console.log(`[${part.name}] part render`);
+    // console.log(`[${part.name}] part render`);
     return (
       <>
         <tr>
