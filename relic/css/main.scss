@@ -1,0 +1,84 @@
+body {
+  background-color: #222;
+  padding: 10px;
+}
+
+.main {
+  &__section {
+    margin-bottom: 10px;
+  }
+  &__update-date {
+    color: white;
+    font-size: 0.6em;
+    margin-left: 4px;
+  }
+  &__title {
+    color: white;
+    margin: 0 0 0 4px;
+    padding: 0;
+  }
+  &__input {
+    @mixin __input {
+      background-color: #222;
+      border: 1px solid gray;
+      border-radius: 3px;
+      color: white;
+      font-size: 0.8em;
+      margin: 0.2em 0.2em;
+    }
+    &--search {
+      @include __input;
+      padding: 0.3em;
+      width: 15em;
+    }
+    @mixin --button {
+      @include __input;
+      outline: none;
+    }
+    &--button-show {
+      @include --button;
+      background-color: #444;
+      padding: 0.4em;
+      width: 10em;
+    }
+    &--button-prime {
+      @include --button;
+    }
+    &--button-selected {
+      background-color: #C09B0F;
+    }
+  }
+}
+
+.buttons {
+  display: none;
+  &__show {
+    display: block;
+  }
+}
+
+/*～620px*/
+@media all and (max-width: 620px)
+{
+  .main {
+    &__update-date {
+      font-size: 0.5em;
+      margin: 0 0 0 3px;
+    }
+    &__title {
+      font-size: 1em;
+      margin: 0 0 0 3px;
+    }
+    &__input {
+      &--search {
+        line-height: 2.5em;
+      }
+      &--button-show {
+        display: none;
+      }
+      &--button-prime {
+        display: none;
+      }
+    }
+  }
+}
