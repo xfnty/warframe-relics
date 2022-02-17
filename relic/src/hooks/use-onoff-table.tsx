@@ -17,7 +17,6 @@ export type TypePrimePart = {
 
 export type TypePrimeItem = {
   name: string;
-  show: boolean;
   parts: TypePrimePart[];
 };
 

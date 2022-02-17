@@ -1,6 +1,6 @@
 import '../css/main.scss';
 
-import useOnOffTable from 'hooks/use-onoff-table';
+import useOnOffTable, { TypePrimeItem } from 'hooks/use-onoff-table';
 import PrimeTable from 'PrimeTable';
 import { useState, VFC } from 'react';
 import Search from 'Search';
@@ -8,7 +8,7 @@ import ToggleButton from 'ToggleButton';
 
 import data from '../assets/prime.json';
 
-const TABLES = data.tables;
+const TABLES: TypePrimeItem[] = data.tables;
 
 const App: VFC = () => {
   // ボタンを表示したり消したりするやつ
@@ -19,7 +19,7 @@ const App: VFC = () => {
 
   let tmpButtons: JSX.Element[] = [];
   let tmpTables: JSX.Element[] = [];
-  TABLES.forEach((value, index) => {
+  TABLES.forEach((value) => {
     tmpButtons.push(
       <ToggleButton
         key={`button_${value.name}`}
