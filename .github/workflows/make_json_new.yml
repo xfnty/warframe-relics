@@ -66,11 +66,11 @@ jobs:
 
     - name: Run script(copy prime.json, relic.json)
       run: |
-        ls $ARTIFACT_DIR -al
+        ls -al
         mv ./$ARTIFACT_DIR/$PRIME_JSON_FILE_NAME $PRIME_JSON_FILE_PATH
         mv ./$ARTIFACT_DIR/$RELICS_JSON_FILE_NAME $RELICS_JSON_FILE_PATH
         rm ./$ARTIFACT_DIR -rf
-        ls $ARTIFACT_DIR -al
+        ls -al
 
     - name: Commit file
       run: |
