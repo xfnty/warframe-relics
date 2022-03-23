@@ -3,7 +3,7 @@
 
 def make_prime_data(json_dict):
     prime_data = {}
-    prime_data["updateDate"] = json_dict["date"]
+    prime_data["updateDate"] = json_dict["updateDate"]
     prime_data["tables"] = []
     
     for name in json_dict["names"]:
