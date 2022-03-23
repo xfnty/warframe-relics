@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "cp docs/index.html docs/404.html",
+    "postbuild": "cp ../docs/index.html ../docs/404.html",
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
