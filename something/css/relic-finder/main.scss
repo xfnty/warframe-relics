@@ -1,0 +1,86 @@
+.main {
+  &__section {
+    margin-bottom: 10px;
+  }
+  &__update-date {
+    color: white;
+    font-size: 0.5em;
+    margin: 0 0 0 3px;
+    min-width: 270px;
+  }
+  &__title {
+    color: white;
+    font-size: 1em;
+    margin: 0 0 0 3px;
+    padding: 0;
+    min-width: 270px;
+  }
+
+  &__input {
+    @mixin __input {
+      background-color: #222;
+      border: 1px solid gray;
+      border-radius: 3px;
+      color: white;
+      font-size: 0.8em;
+      margin: 0.2em 0.2em;
+    }
+    &--search {
+      @include __input;
+      padding: 0.3em;
+      width: 15em;
+      line-height: 2.5em;
+    }
+    @mixin --button {
+      @include __input;
+      outline: none;
+    }
+    &--button-show {
+      @include --button;
+      background-color: #444;
+      padding: 0.4em;
+      width: 10em;
+      display: none;
+    }
+    &--button-prime {
+      @include --button;
+      display: none;
+    }
+    &--button-selected {
+      background-color: #C09B0F;
+    }
+  }
+}
+
+.buttons {
+  display: none;
+  &__show {
+    display: block;
+  }
+}
+
+/* 481px～ */
+@media all and (min-width: 481px)
+{
+  .main {
+    &__update-date {
+      font-size: 0.6em;
+      margin-left: 4px;
+    }
+    &__title {
+      font-size: 1.5em;
+      margin: 0 0 0 4px;
+    }
+    &__input {
+      &--search {
+        line-height: 1em;
+      }
+      &--button-show {
+        display: inline;
+      }
+      &--button-prime {
+        display: inline;
+      }
+    }
+  }
+}
