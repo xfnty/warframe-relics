@@ -1,0 +1,81 @@
+name: make 2 json files then push
+
+on: 
+  workflow_dispatch:
+    inputs:
+      commit-msg:
+        description: 'コミットメッセージ'
+        required: true
+        default: 'json更新'
+env:
+  JSON_OUTPUT_DIR: 'output'
+  ARTIFACT_DIR: 'artifact'
+  PRIME_JSON_FILE_NAME: 'prime.json'
+  PRIME_JSON_FILE_PATH: './something/assets/prime.json'
+  RELICS_JSON_FILE_NAME: 'relics.json'
+  RELICS_JSON_FILE_PATH: './something/assets/relics.json'
+    
+jobs:
+  job_1:
+    name: make json then upload
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ./workflow-scripts/requirements.txt
+
+    - name: Run script
+      run: |
+        python ./workflow-scripts/main.py $JSON_OUTPUT_DIR
+
+    - name: Upload prime.json
+      uses: actions/upload-artifact@v1
+      with:
+        name: ${{ env.ARTIFACT_DIR }}
+        path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
+
+    - name: Upload relics.json
+      uses: actions/upload-artifact@v1
+      with:
+        name: ${{ env.ARTIFACT_DIR }}
+        path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}
+
+  job_2:
+    name: download file then push
+    needs: job_1
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Download json
+      uses: actions/download-artifact@v1
+      with:
+        name: ${{ env.ARTIFACT_DIR }}
+
+    - name: Run script(copy prime.json, relic.json)
+      run: |
+        ls -al
+        mv ./$ARTIFACT_DIR/$PRIME_JSON_FILE_NAME $PRIME_JSON_FILE_PATH
+        mv ./$ARTIFACT_DIR/$RELICS_JSON_FILE_NAME $RELICS_JSON_FILE_NAME
+        rm ./$ARTIFACT_DIR -rf
+        ls -al
+
+    - name: Commit file
+      run: |
+        git config --local user.name '${{ secrets.SECRET_NAME }}'
+        git config --local user.email '${{ secrets.SECRET_EMAIL }}'
+        git add .
+        git commit -m "${{ github.event.inputs.commit-msg }}"
+        git push origin master
