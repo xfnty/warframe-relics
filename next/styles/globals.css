@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .border-main {
+    @apply border-[#adff2f];
+  }
+
+  .text-main {
+    @apply text-[#adff2f];
+  }
+
+  .border-1-gray {
+    @apply border-[1px] border-gray-400;
+  }
+}
