@@ -11,9 +11,9 @@ env:
   JSON_OUTPUT_DIR: 'output'
   ARTIFACT_DIR: 'artifact'
   PRIME_JSON_FILE_NAME: 'prime.json'
-  PRIME_JSON_FILE_PATH: './something/assets/prime.json'
+  PRIME_JSON_FILE_PATH: './next/assets/prime.json'
   RELICS_JSON_FILE_NAME: 'relics.json'
-  RELICS_JSON_FILE_PATH: './something/assets/relics.json'
+  RELICS_JSON_FILE_PATH: './next/assets/relics.json'
     
 jobs:
   job_1:

@@ -24,14 +24,14 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd something
+        cd next
         yarn install
 
     - name: Build
       run: |
-        cd something
+        cd next
         yarn typesync
-        yarn build
+        yarn export
 
     - name: Commit file
       run: |
