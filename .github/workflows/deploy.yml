@@ -37,7 +37,7 @@ jobs:
       run: |
         cd docs
         mkdir RelicFinder
-        cp ./RelicFinder.html ./docs/index.html
+        cp ./RelicFinder.html ./RelicFinder/index.html
         ls RelicFinder -al
 
     - name: Commit file
