@@ -33,6 +33,13 @@ jobs:
         yarn typesync
         yarn export
 
+    - name: For redirect
+      run: |
+        cd docs
+        mkdir RelicFinder
+        cp ./RelicFinder.html ./docs/index.html
+        ls RelicFinder -al
+
     - name: Commit file
       run: |
         git config --local user.name '${{ secrets.SECRET_NAME }}'
