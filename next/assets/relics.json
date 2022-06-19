@@ -1,8 +1,7 @@
 {
   "relics": [
-    "Axi A12",
+    "Axi G5",
     "Axi G7",
-    "Axi H5",
     "Axi K6",
     "Axi K7",
     "Axi O5",
@@ -12,17 +11,16 @@
     "Axi T8",
     "Axi V10",
     "Lith C7",
+    "Lith C8",
     "Lith G5",
     "Lith H4",
-    "Lith K5",
-    "Lith M7",
     "Lith N11",
     "Lith N12",
     "Lith S12",
+    "Lith T6",
     "Lith T9",
     "Lith Z3",
     "Meso A3",
-    "Meso E5",
     "Meso G3",
     "Meso G4",
     "Meso I2",
@@ -30,8 +28,9 @@
     "Meso N12",
     "Meso P5",
     "Meso P7",
-    "Neo B6",
+    "Meso R4",
     "Neo C2",
+    "Neo K3",
     "Neo K4",
     "Neo M4",
     "Neo N16",
@@ -39,10 +38,11 @@
     "Neo P4",
     "Neo V10",
     "Neo V9",
+    "Neo Z8",
     "Requiem I",
     "Requiem Ii",
     "Requiem Iii",
     "Requiem Iv"
   ],
-  "updateDate": "Last Updated: 28 Mar 2022 21:21:55"
+  "updateDate": "Last Updated: 19 Jun 2022 11:44:21"
 }
