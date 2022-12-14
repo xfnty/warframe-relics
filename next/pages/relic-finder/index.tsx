@@ -68,14 +68,14 @@ const RelicFinder = () => {
 
           <div className="mb-3">
             <input
-              className="border-1-gray hidden w-36 cursor-pointer rounded py-1 text-sm sm:inline"
+              className="border-1-gray w-36 cursor-pointer rounded py-1 text-sm sm:inline"
               type="button"
               value={isShow ? 'Hide buttons' : 'Show buttons'}
               onClick={() => setIsShow((prev) => !prev)}
             />
           </div>
 
-          <div className={`hidden ${isShow ? 'sm:inline' : ''}`}>{buttons}</div>
+          <div className={`${isShow ? 'inline' : 'hidden'}`}>{buttons}</div>
           <div>{primeTables}</div>
         </main>
       </>

@@ -9,7 +9,7 @@ const Search: VFC<Props> = ({ handleChangeKeyword }): JSX.Element => {
 
   return (
     <input
-      className="border-1-gray w-56 rounded bg-[#222] p-2 text-sm sm:w-72 sm:text-base"
+      className="border-1-gray w-56 rounded bg-[#222] p-2 text-base sm:w-72"
       type="text"
       placeholder="e.g. ash"
       value={keyword}
