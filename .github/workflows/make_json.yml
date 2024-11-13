@@ -39,13 +39,13 @@ jobs:
         python ./workflow-scripts/main.py $JSON_OUTPUT_DIR
 
     - name: Upload prime.json
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_DIR }}
         path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
 
     - name: Upload relics.json
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_DIR }}
         path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}
@@ -60,7 +60,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Download json
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4
       with:
         name: ${{ env.ARTIFACT_DIR }}
 
