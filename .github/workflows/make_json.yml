@@ -42,14 +42,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_DIR }}
-        # path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
-        path: './output/*.json'
-
-    # - name: Upload relics.json
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: ${{ env.ARTIFACT_DIR }}
-    #     path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}
+        path: ./${{ env.JSON_OUTPUT_DIR }}/*.json
 
   job_2:
     name: download file then push
@@ -68,12 +61,9 @@ jobs:
     - name: Run script(copy prime.json, relic.json)
       run: |
         ls -al
-        # mv ./$ARTIFACT_DIR/$PRIME_JSON_FILE_NAME $PRIME_JSON_FILE_PATH
-        # mv ./$ARTIFACT_DIR/$RELICS_JSON_FILE_NAME $RELICS_JSON_FILE_PATH
-        # rm ./$ARTIFACT_DIR -rf
         mv ./$PRIME_JSON_FILE_NAME $PRIME_JSON_FILE_PATH
         mv ./$RELICS_JSON_FILE_NAME $RELICS_JSON_FILE_PATH
-        # rm ./$ARTIFACT_DIR -rf
+        rm ./*.json -rf
         ls -al
 
     - name: Commit file
