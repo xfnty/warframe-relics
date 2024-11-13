@@ -43,7 +43,7 @@ jobs:
       with:
         name: ${{ env.ARTIFACT_DIR }}
         # path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
-        path: './${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }} ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}'
+        path: './output/*.json'
 
     # - name: Upload relics.json
     #   uses: actions/upload-artifact@v4
