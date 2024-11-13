@@ -38,17 +38,18 @@ jobs:
       run: |
         python ./workflow-scripts/main.py $JSON_OUTPUT_DIR
 
-    - name: Upload prime.json
+    - name: Upload prime.json and relics.json
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.ARTIFACT_DIR }}
-        path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
+        # path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }}
+        path: './${{ env.JSON_OUTPUT_DIR }}/${{ env.PRIME_JSON_FILE_NAME }} ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}'
 
-    - name: Upload relics.json
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.ARTIFACT_DIR }}
-        path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}
+    # - name: Upload relics.json
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: ${{ env.ARTIFACT_DIR }}
+    #     path: ./${{ env.JSON_OUTPUT_DIR }}/${{ env.RELICS_JSON_FILE_NAME }}
 
   job_2:
     name: download file then push
